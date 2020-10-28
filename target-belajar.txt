@@ -3,5 +3,8 @@ Target Belajar
 # konsisten mempelajari 2 video WPU setiap minggu
 # membuat platform pengelolaan data peserta, sebagai hasil pembelajaran
 # aktif dalam forum diskusi
+# membuat rancang bangun kasus pengelolaan perpustakaan
+
 - Android Flutter
+# konsisten mengikuti tutorial flutter 1 video sekali dalam sepekan
 - Data Sains
