@@ -8,3 +8,4 @@ Target Belajar
 # konsisten mengikuti tutorial flutter 1 video sekali dalam sepekan
 # buat vlog belajar android
 - Data Sains
+ini tuh materi yang lebih banyak ke machine learningnya
