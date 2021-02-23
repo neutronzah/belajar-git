@@ -1,2 +1,6 @@
 Mengenai Data Sains
 di bidang data, DS merupakan bagian yang bekerja dengan machine learning untuk membuat sistem pengolahan data yang lebih baik menggunakan tools statistik dan algoritme-algoritme machine learning untuk pengenalan pola.
+
+Urutan materi pembelajarannya:
+* Apa itu machine learning
+* pengenalan pola dengankecerdasan buatan
