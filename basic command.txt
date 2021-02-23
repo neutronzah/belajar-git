@@ -1,0 +1,36 @@
+BASIC COMMAND
+$ pwd
+$ cd
+  ^ to change directory
+$ git init
+  ^ make repo folder as a MASTER BRANCH
+$ git status
+  ^ checking if there is: 
+    - a new file not added yet to staging area
+    - a new added file (to staging area), ready to commit
+# sebelum melakukan commit, seperti di github kita juga ngasih tau siapa kita:
+  ^ email --> $ git config --global user.email "me@email.com"
+  ^ nama --> $ git config --global user.name "My Name"
+$ git commit -m "menambahkan file index.html"
+  * -m : message
+
+##
+$ git status
+# cara nambahin lebih dari 1 perubahan. Misal: nambah file baru style.css dan linking nya di index.html
+  kasih titik setelah add saat menambahkan ke staging area
+$ git add .
+
+##
+# untuk melihat apa saja yang sudah dilakukan di git 
+  --> $ git log
+  --> $ git log -3    # menampilkan 3 log git terakhir
+# melihat log spesifik file tertentu
+  --> $ git log -- style.css   # nama file setelah double strip+space
+
+##
+# misalnya mau ngambil file yang tadi udh terlanjur dihapus di suatu commit: checkout dengan 5-digit pertama dari hash number nya dan nama file nya jika hanya ingin megembalikan perubahan pada file tertentu dengan menambah -- namafile
+  $ git checkout da573 -- style.css
+  # perubahan & file yg di checkout masuk ke staging area, maka harus di commit
+    $ git status
+    $ git commit -m "mengembalikan style.css"
+  
