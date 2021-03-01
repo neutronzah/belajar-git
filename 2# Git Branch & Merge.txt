@@ -1,0 +1,44 @@
+BRANCH & MERGE dengan git bash di lokal/terminal di VSCode
+##
+# cara buat repo baru
+  1. Ketik command: cd <<nama lokasinya, ex: /d/git-repo>>
+  2. Drag folder baru untuk repo ke git bash setelah command cd, enter!
+  3. Masuk k folder repo dengan file-explorer, klik kanan --> git bash here!
+##
+# Cara commit kalo cuma modified --> git add . --> git commit... atau,
+    dengan menambahkan -a sebelum m, ada 2 cara:
+  $ git commit -a -m "pesan commit nya"
+  $ git commit -am "pesan commit nya"
+##
+# Membuat branch dengan cara: $ git branch <<namabranch..>>
+$ git branch          >> melihat sedang di branh mana yg aktif nya
+$ git branch dosen    >> membuat branch baru bernama dosen
+$ git branch staff    >> membuat branch baru bernama staff
+## hasilnya ada 2 branch dari branch 'master' yang sedang aktif
+##
+# untuk menampilkan log dalam bentuk graf
+  $ git log --all --decorate --oneline --graph
+# bisa dibuat juga singkatannya dengan 'alias' command
+  $ alias graf="git log --all --decorate --oneline --graph"
+  jadi kalo mau manggil graph nya tinggal ketik command "graf" aja.
+##
+# Kalau mau pindah branch
+  $ git checkout <<nama_branch>>, misal
+  $ git checkout dosen    >> artinya pindah ke branch dosen
+##
+# Melakukan Merge
+ada 2 merge:
+1. Fast forward: jika branch yang mau di merge ada di jalur langsung (direct path)
+2. Three way Merge: yang jalurnya gak langsung
+
+  $ git merge <<nama_branch>>  misal; $ git merge dosen
+##
+# Menghapus branch
+  $ git branch -d <<nama_branch>>   misal; $ git branch -d dosen
+##
+# Untuk mengetahui branch mana saja yang udah di merge
+  $ git branch --merged
+  kalo belum di merge dihapus, gabisa, akan muncul pesan gamau d merge..
+  tapi kalo udh yakin banget mau tetp ngapus bisa pake command dg D besar
+  $ git branch -D <<nama_branch>>
+  
