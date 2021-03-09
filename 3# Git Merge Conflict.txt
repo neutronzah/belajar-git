@@ -1,0 +1,15 @@
+Kalo perubahannya untrack(cuma modifying) bisa langsung di commit g perlu di tambah ke staging area
+$ git commit -am "pesan commitnya"
+
+##
+# kembali/checkout ke commit tertentu
+  $ git log
+  $ q       >>> untuk quit
+  $ git checout ab6hk78
+status di kode editor akan ada di commit tersebut begitupun semua file nya
+jika ingin kembali, maka checkout ke master branch
+  $ git checkout master
+ 
+Namun, jika memang ingin ke keadaan commit tertentu
+setelah checkout ke commit tersebut --> buat branch baru, tapi HEAD nya masih terpisah dari branch baru itu --> 
+lalu aktifkan ke branch baru tsb, maka HEAD akan mengarah k branch baru itu --> Sudah NORMAL lagi bisa dilakukan git seperti biasa.
