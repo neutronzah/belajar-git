@@ -1,0 +1,12 @@
+https://www.youtube.com/watch?v=rgDDWhQe-ow&list=PLFIM0718LjIVknj6sgsSceMqlq242-jNf&index=9
+
+1. buat repo di github dengan format: username.github.io >> neutronzah.github.io
+2. masuk ke folder web portofolio kita, klik kanan, git bash here
+3. lakukan init (make it main/ master): git init
+4. membuat remote baru : git remote add origin https://github.com/username/repository.git >> git remote add origin https://github.com/neutronzah.github.io.git
+5. Pastikan sudah commit semua file yang di lokal: 
+   $ git status
+   jika ada yang belum, maka tambah ke staging area: git add .
+   lalu commit: git commit -m "pesan commit"
+6. push kode yang ada di lokal ke remote kita: git push -u origin nama_branch >> git push -u origin master
+7. cek akses di browser, in syaa Allah udah sukses: neutronzah.github.io
