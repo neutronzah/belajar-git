@@ -1,0 +1,488 @@
+Pada seri belajar ini akan membuat remote antara lokal dengan github
+### menggunakan https
+Buat sebuah repo >> klik tombol ijo code pada repo >> pada bagian clone copy url yg https
+
+
+$ git fetch   >> memeriksa sudah sampai mana commit repo yang di remote, apakah beda dengan lokal yang kita punya
+
+
+#####################################################========================###################################################
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01
+$ git clone https://github.com/neutronzah/repo-git-test.git
+Cloning into 'repo-git-test'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01
+$ cd repo-git-test/
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ ls
+README.md
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git remote
+origin
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git remote -v
+origin  https://github.com/neutronzah/repo-git-test.git (fetch)
+origin  https://github.com/neutronzah/repo-git-test.git (push)
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ alias graf="git log --all --decorate --oneline --graph"
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ graf
+* 21ed0bf (HEAD -> main, origin/main, origin/HEAD) Initial commit
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git add .
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   index.html
+
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git commit -m "menambahkan file index.html"
+[main cb94746] menambahkan file index.html
+ 1 file changed, 12 insertions(+)
+ create mode 100644 index.html
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ graf
+* cb94746 (HEAD -> main) menambahkan file index.html
+* 21ed0bf (origin/main, origin/HEAD) Initial commit
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 487 bytes | 162.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/neutronzah/repo-git-test.git
+   21ed0bf..cb94746  main -> main
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ graf
+* cb94746 (HEAD -> main, origin/main, origin/HEAD) menambahkan file index.html
+* 21ed0bf Initial commit
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=true
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+core.editor="C:\Users\Lisya\AppData\Local\Programs\Microsoft VS Code\Code.exe" --wait
+user.email=neutron_63@yahoo.com
+user.name=neutronzah
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.ignorecase=true
+remote.origin.url=https://github.com/neutronzah/repo-git-test.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git commit -am "menambahkan paragraf"
+[main 928fc7a] menambahkan paragraf
+ 1 file changed, 1 insertion(+)
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ graf
+* 928fc7a (HEAD -> main) menambahkan paragraf
+* cb94746 (origin/main, origin/HEAD) menambahkan file index.html
+* 21ed0bf Initial commit
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 610 bytes | 610.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/neutronzah/repo-git-test.git
+   cb94746..928fc7a  main -> main
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ cd..
+bash: cd..: command not found
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/repo-git-test (main)
+$ cd ..
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01
+$ cd git-repo-2
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (master)
+$ ls
+data-mhs.html  dosen.html  staff.html
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (master)
+$ graf
+*   ebfb266 (HEAD -> master) merging dev ke master
+|\
+| * 90cfe57 mengubah file data-mhs.html
+* | 943e8cd mengubah file data-mhs.html
+|/
+*   76bead1 Merge branch 'staff'
+|\
+| * e3afef5 menambahkan fitur staff.html
+* | adf14c7 menambahkan file dosen.html
+|/
+* b9acbba nambahin 1 data mhs
+* 69972e0 perubahan dalam data mahasiswa
+* 6491ba9 menambah file data-mhs.html
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (master)
+$ git remote
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (master)
+$ git remote add origin https://github.com/neutronzah/git-repo-2.git
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (master)
+$ git remote
+origin
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (master)
+$ git remote -v
+origin  https://github.com/neutronzah/git-repo-2.git (fetch)
+origin  https://github.com/neutronzah/git-repo-2.git (push)
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (master)
+$ git branch -M main
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git push -u origin main
+Enumerating objects: 26, done.
+Counting objects: 100% (26/26), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (23/23), done.
+Writing objects: 100% (26/26), 2.84 KiB | 416.00 KiB/s, done.
+Total 26 (delta 9), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (9/9), done.
+To https://github.com/neutronzah/git-repo-2.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   data-mhs.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git commit -am "menambah list di data-mhs.html"
+[main 26d2ae8] menambah list di data-mhs.html
+ 1 file changed, 2 insertions(+)
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ graf
+* 26d2ae8 (HEAD -> main) menambah list di data-mhs.html
+*   ebfb266 (origin/main) merging dev ke master
+|\
+| * 90cfe57 mengubah file data-mhs.html
+* | 943e8cd mengubah file data-mhs.html
+|/
+*   76bead1 Merge branch 'staff'
+|\
+| * e3afef5 menambahkan fitur staff.html
+* | adf14c7 menambahkan file dosen.html
+|/
+* b9acbba nambahin 1 data mhs
+* 69972e0 perubahan dalam data mahasiswa
+* 6491ba9 menambah file data-mhs.html
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 405 bytes | 405.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/neutronzah/git-repo-2.git
+   ebfb266..26d2ae8  main -> main
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ graf
+* 26d2ae8 (HEAD -> main, origin/main) menambah list di data-mhs.html
+*   ebfb266 merging dev ke master
+|\
+| * 90cfe57 mengubah file data-mhs.html
+* | 943e8cd mengubah file data-mhs.html
+|/
+*   76bead1 Merge branch 'staff'
+|\
+| * e3afef5 menambahkan fitur staff.html
+* | adf14c7 menambahkan file dosen.html
+|/
+* b9acbba nambahin 1 data mhs
+* 69972e0 perubahan dalam data mahasiswa
+* 6491ba9 menambah file data-mhs.html
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        style.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git add .
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git commit -m "menambah file style.css"
+[main 2632271] menambah file style.css
+ 1 file changed, 3 insertions(+)
+ create mode 100644 style.css
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git push
+To https://github.com/neutronzah/git-repo-2.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/neutronzah/git-repo-2.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git fetch
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 688 bytes | 0 bytes/s, done.
+From https://github.com/neutronzah/git-repo-2
+   26d2ae8..54bad9e  main       -> origin/main
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ graf
+* 2632271 (HEAD -> main) menambah file style.css
+| * 54bad9e (origin/main) menambahkan file style.css
+|/
+* 26d2ae8 menambah list di data-mhs.html
+*   ebfb266 merging dev ke master
+|\
+| * 90cfe57 mengubah file data-mhs.html
+* | 943e8cd mengubah file data-mhs.html
+|/
+*   76bead1 Merge branch 'staff'
+|\
+| * e3afef5 menambahkan fitur staff.html
+* | adf14c7 menambahkan file dosen.html
+|/
+* b9acbba nambahin 1 data mhs
+* 69972e0 perubahan dalam data mahasiswa
+* 6491ba9 menambah file data-mhs.html
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git pull
+CONFLICT (add/add): Merge conflict in style.css
+Auto-merging style.css
+Automatic merge failed; fix conflicts and then commit the result.
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main|MERGING)
+$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main|MERGING)
+$ git add .
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main|MERGING)
+$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   style.css
+
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main|MERGING)
+$ git commit -m "mengubah isi file style.css"
+[main 40ae2cf] mengubah isi file style.css
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 504 bytes | 504.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/neutronzah/git-repo-2.git
+   54bad9e..40ae2cf  main -> main
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$ graf
+*   40ae2cf (HEAD -> main, origin/main) mengubah isi file style.css
+|\
+| * 54bad9e menambahkan file style.css
+* | 2632271 menambah file style.css
+|/
+* 26d2ae8 menambah list di data-mhs.html
+*   ebfb266 merging dev ke master
+|\
+| * 90cfe57 mengubah file data-mhs.html
+* | 943e8cd mengubah file data-mhs.html
+|/
+*   76bead1 Merge branch 'staff'
+|\
+| * e3afef5 menambahkan fitur staff.html
+* | adf14c7 menambahkan file dosen.html
+|/
+* b9acbba nambahin 1 data mhs
+* 69972e0 perubahan dalam data mahasiswa
+* 6491ba9 menambah file data-mhs.html
+
+Lisya@LAPTOP-QOVG218P MINGW64 /d/01/git-repo-2 (main)
+$
