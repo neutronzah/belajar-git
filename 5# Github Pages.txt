@@ -10,3 +10,37 @@ https://www.youtube.com/watch?v=rgDDWhQe-ow&list=PLFIM0718LjIVknj6sgsSceMqlq242-
    lalu commit: git commit -m "pesan commit"
 6. push kode yang ada di lokal ke remote kita: git push -u origin nama_branch >> git push -u origin master
 7. cek akses di browser, in syaa Allah udah sukses: neutronzah.github.io
+
+
+## ================ PART 2
+Repo utama untuk GITHUB PAGES adalah  username.github.io >> neutronzah.github.io, dan..
+semua repo di git bisa ada web nya, dengan posisi dibawah repo utama github pages nya yaitu neutronzah.github.io
+misal punya repo dg file2 website namanya test, ngaksesnya:  username.github.io/repo >> neutronzah.github.io/test
+kalau yang ditampilkan bukan web, bisa pilih tema di bagian setting di github dibawah pengaturan pages nya
+
+## ================ PART 3
+MULTIPLE REMOTE
+Kasus: misalnya kita fork suatu repo dari akun lain, lalu kita clone repo tsb dari akun kita, kita ingin jika apa-apa yang kita lakukan itu kita push, gak cuma terupdate di akun kita, tapi juga di fork source nya tersebut, sehingga sinkron di 3 tempat sekaligus.
+>>> kasus dimana kita ingin tetap up-to-date dengan repo sumber aslinya.
+1. lakukan clone seperti biasa (pada tutorial sebelumnya) dari akun github sendiri: git clone (https nya dari repo)
+2. masuk git bash dari repo yang sudah d clone di desktop kalian: cd nama_folder_repo
+3. cek remote: kemungkinan sudah ada origin, lalu cek detailnya lagi: git remote -v, maka akan terlihat dari akun mana remote tersebut terhubung, biasanya akun sendiri, misal: neutronzah
+4. agar selalu up-to-date juga dengan repo dari source fork nya, kita membuat remote baru ke source fork nya, misal akun: sandhikagalih
+   $ git remote add sandhikagalih url_dari_repo_sumber_fork_sandhikagalih
+5. cek remote: git remote, git remote -v, sudah ada 2 remote: 1 remote ke akun github kita, 1 remote ke akun github sumber fork nya
+6. cek graf: akan terlihat kalo pointer branch nya hanya ada 2: di lokal dan di akun kita. Selanjutnya kita mau ada 3 dengan sumber fork nya.
+7. untuk menambah sumber fork ke graf kita, kita lakukan fetch dulu, agar bisa melihat juga history commit yang terjadi di repo sumber fork nya.
+   $ git fetch nama_remote >> git fetch sandhikagalih
+8. cek graf: akan terlihat kalau kita sudah terhubung ke 2 remote pada pointer branch nya.
+9. untuk mengecek apakah ada perubahan di sumber fork nya, harus di fetch lagi:
+   $ git fetch nama_remote >> git fetch sandhikagalih
+10. cek graf: akan terlihat di jika ada perubahan pada repo sumber fork. Jika ada perubahan, maka pointer heading kita akan didahului oleh commit di sumber fork tersebut. aka supaya sama, kita harus merge.
+11. lakukan git merge ke branch master:
+   $ git merge nama_remote/nama_branch    >> git merge sadhikagalih/master
+12. cek graf: akan terlihat kalo lokal kita sudah sama dengan repo sumber fork nya, atau repo aslinya. Tapii..di akun github kita belum berubah. Jadi yang udah berubah itu di repo asli dan lokal kita aja
+13. lakukan git push ke akun kita: git push -u origin master
+
+
+## ================== PART 4
+>>> Kasus: ingin ngusulin perubahan ke repo sumber aslinya.
+
